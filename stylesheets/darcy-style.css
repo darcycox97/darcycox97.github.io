@@ -1,0 +1,32 @@
+#root-div {
+    padding: 0px;
+    margin:0px;
+    padding-top: 70px;
+}
+
+#img-profile {
+    height:300px;
+    width:300px;
+    display:block;
+    margin:auto;
+}
+
+#about-me {
+    width: 400px;
+    text-align: center;
+    background-color: #EDEDED;
+    border-style: solid;
+    border-color: 1D1E2C;
+    border-width: thin;
+}
+
+#about-me > #my-info-div {
+    margin: auto;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+}
+
+p {
+    font-size: 18px;
+}
