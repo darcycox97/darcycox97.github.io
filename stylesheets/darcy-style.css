@@ -1,32 +1,62 @@
-#root-div {
-    padding: 0px;
-    margin:0px;
-    padding-top: 70px;
+body { margin:0; font-family: sans-serif;}
+
+.section {
+    border-bottom: 1px solid black;
+    padding: 70px 100px 70px 100px;
+    overflow: hidden;
 }
 
-#img-profile {
-    height:300px;
-    width:300px;
-    display:block;
+.section h1 {
+    text-align: center;
+}
+
+.section-centered {
+    max-width:600px;
     margin:auto;
 }
 
-#about-me {
-    width: 400px;
+
+/****** Navbar ******/
+
+.navbar {
     text-align: center;
-    background-color: #EDEDED;
-    border-style: solid;
-    border-color: 1D1E2C;
-    border-width: thin;
+    padding:0;
+    margin:0;
+    width:100%;
+    overflow:hidden;
+    background-color: #B7B7B7;
+    color:black;
+    position: fixed;
+    top:0;
+    z-index: 1;
 }
 
-#about-me > #my-info-div {
-    margin: auto;
-    text-align: left;
-    padding: 10px;
-    font-size: 18px;
+.nav-item {
+    float: left;
+    padding:15px 20px 15px 20px;
+    background-color: inherit;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
 }
 
-p {
-    font-size: 18px;
+.nav-item:hover {
+    background-color: #D17321;
+}
+
+
+/****** About Me ******/
+
+.about-section > img {
+    max-width: 200px;
+    max-height: 200px;
+    float:left;
+    border-radius: 200px;
+}
+
+.about-section p {
+    float:left;
+    margin-left: 40px;
+    position: relative;
+    top: 50px;
 }
