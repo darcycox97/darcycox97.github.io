@@ -6,41 +6,66 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/darcy-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
     
 <body>
-
-    <div id="root-div">
+    
+    <div id="wrapper">
         
         <nav class="navbar">
             <a class="nav-item" href="/">Home</a>
             <a class="nav-item" href="/">Piano</a>
-            <a class="nav-item" href="/">Projects</a>
-            <a class="nav-item" href="/">CV</a>
+             <a class="nav-item" href="/">Projects</a>
+             <a class="nav-item" href="/">CV</a>
         </nav>
-       
-        <div class="about-section section">
-            <h1>About Me</h1>
-            <img id="img-profile" src="me.jpg">
-            <p class="section-centered">I am a Part II Software Engineering student studying at the University of Auckland. I am loving software engineering so far, and in just one year have learnt so many new skills. I am always trying out new things to expand my areas of programming, hence this website. When I'm not programming I enjoy seeing my mates, watching movies, and playing piano.</p>    
-        </div>
+
+        <div id="main-content">
         
-        <div class="section">
-            <h1>This Website</h1>
-            <p class="section-centered">This website is being developed from scratch by me. The idea is to teach myself web development while also giving me the perfect opportunity to show off some of my projects and achievements. It is currently in very early stages of development but here's the plan:</p>
-            <br>
-            <ul class="section-centered">
-                <li>Add a projects page to prove that I am actually capable of coding</li>
-                <li>Add a CV page showing work experience / academic achievements</li>
-                <li>Show off my YouTube channel <a href="https://www.youtube.com/user/97darcman" target="_blank">Datty Plays</a></li>
-                <li>Get some experience using API's and do some cool spotify/youtube stuff</li>
-            </ul>
-            <br>
-            <p class="section-centered">Watch this space.</p>
-        </div>
+            <div class="about-section section">
+                <h1 class="section-heading">About Me</h1>
+                <div id="about-me-container" class="section-centered">
+                  <img id="img-profile" src="me.jpg">
+                  <p id="about-me-info">I am a Part II Software Engineering student studying at the University of Auckland. I am loving software engineering so far, and in just one year have learnt so many new skills. I am always trying out new things to expand my areas of programming, hence this website. When I'm not programming I enjoy seeing my mates, watching movies, and playing piano.</p>    
+                </div>
+            </div>
+
+            <div class="section">
+                <h1 class="section-heading">This Website</h1>
+                <p class="section-centered" id="this-website-info">This website is being developed from scratch by me. The idea is to teach myself web development while also giving me the perfect opportunity to show off some of my projects and achievements. It is currently in very early stages of development but here's the plan:</p>
+                <br>
+                <ul class="section-centered">
+                    <li>Add a projects page to prove that I am actually capable of coding</li>
+                    <li>Add a CV page showing work experience / academic achievements</li>
+                    <li>Show off my YouTube channel <a href="https://www.youtube.com/user/97darcman" target="_blank">Datty Plays</a></li>
+                    <li>Get some experience using API's and do some cool spotify/youtube stuff</li>
+                </ul>
+                <br>
+                <p class="section-centered">Watch this space.</p>
+            </div>
         
-    </div>
+        </div> <!-- End of content -->
+    
+        <footer> 
+            <div class="footer">
+                <div class="footer-heading"><b>Check Me Out</b></div>
+                <a class="footer-icon" href="https://facebook.com/darcycox97/" target="_blank">
+                    <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+                </a>
+                <a class="footer-icon" href="https://github.com/darcycox97/" target="_blank">
+                    <i class="footer-icon fa fa-github fa-lg" aria-hidden="true"></i>
+                </a>
+                <a class="footer-icon" href="https://www.youtube.com/user/97darcman" target="_blank">
+                    <i class="fa fa-youtube fa-lg" aria-hidden="true"></i>
+                </a>
+                <a class="footer-icon">
+                    <i class="footer-icon fa fa-envelope fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+        </footer>
+        
+    </div> <!-- End of wrapper --> 
 
 </body>
 </html>
