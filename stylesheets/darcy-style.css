@@ -16,6 +16,15 @@ html, body { margin:0; padding:0; font-family: 'Open Sans', sans-serif; height: 
     height: 100%;
 }
 
+.inline-link {
+    text-decoration: none;
+    color: #8B228E;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
+}
+
 
 /***** Header *****/
 
@@ -96,15 +105,12 @@ html, body { margin:0; padding:0; font-family: 'Open Sans', sans-serif; height: 
     max-height: 200px;
     float:left;
     border-radius: 200px;
-}
-
-#about-me-container * {
     margin-right: 50px;
 }
 
 #about-me-info {
     position: relative;
-    top: 35px;
+    top: 26px;
 }
 
 
@@ -137,4 +143,27 @@ html, body { margin:0; padding:0; font-family: 'Open Sans', sans-serif; height: 
 .footer-heading {
     padding-top:10px;
     padding-bottom: 10px;
+}
+
+/****** Piano Page *******/
+
+#subscribe-button {
+    position: fixed;
+    right: 10px;
+    top:60px;
+}
+
+#subscribe-button * {
+    padding:0;
+    margin:0;
+    text-align: center;
+}
+
+.video-container{
+    text-align:center;
+}
+
+.video {
+    width:640px;
+    height: 360px;
 }
