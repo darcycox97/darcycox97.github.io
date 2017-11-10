@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../stylesheets/darcy-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -31,8 +32,8 @@
         <div class="section">
             <h1 class="section-heading">Datty Plays</h1>
             <h2 class="section-heading">My YouTube Channel</h2>
-            <p class="section-centered">I have played piano pretty much my whole life, and it is one of my greatest passions.</p>
-            <p class="section-centered">After completing my grade 8 certificate in 2015 and finishing my high school music course, I found that I was lacking motivation to continue learning these difficult pieces to a performance standard. I had no opportunities to perform these pieces that I had put in a lot of effort to learn, so what was the point?</p>
+            <p class="section-centered">I have played piano pretty much my whole life, and it is one of my greatest passions.
+            After completing my grade 8 certificate in 2015 and finishing my high school music course, I found that I was lacking motivation to continue learning these difficult pieces to a performance standard. I had no opportunities to perform these pieces that I had put in a lot of effort to learn, so what was the point?</p>
             <br>
             <p class="section-centered">I managed to find the perfect solution to this problem, which was to create my own YouTube channel - <a class="inline-link" href="https://youtube.com/user/97darcman" target="_blank">"Datty Plays"</a>. This channel allows me to film my performances and share them with the world. The resulting product is something I am extremely proud of, and I am always looking forward to learning new pieces and performing them for the channel. On this page I have compiled a collection of all my videos. Enjoy.</p>
         </div>
@@ -42,6 +43,7 @@
             <div class="section-centered">
                 <div class="video-container">
                 <iframe class="video" src="https://www.youtube.com/embed/zrvono_-Wqg" frameborder="0" allowfullscreen></iframe>
+               <p>Views: <span class="zrvono_-Wqg views"></span>&nbsp;&nbsp;&nbsp;Likes: <span class="zrvono_-Wqg likes"></span>&nbsp;&nbsp;&nbsp;Dislikes: <span class="zrvono_-Wqg dislikes"></span></p>
                 </div>
             </div>
         </div>
@@ -51,6 +53,7 @@
             <div class="section-centered">
                 <div class="video-container">
                 <iframe class="video" src="https://www.youtube.com/embed/VqCMg65UMDE" frameborder="0" allowfullscreen></iframe>
+                <p>Views: <span class="VqCMg65UMDE views"></span>&nbsp;&nbsp;&nbsp;Likes: <span class="VqCMg65UMDE likes"></span>&nbsp;&nbsp;&nbsp;Dislikes: <span class="VqCMg65UMDE dislikes"></span></p>
                 </div>
             </div>
         </div>
@@ -60,7 +63,9 @@
             <div class="section-centered">
                 <div class="video-container">
                 <iframe class="video" src="https://www.youtube.com/embed/sIiGonzR6Ys" frameborder="0" allowfullscreen></iframe>
+                    <p>Views: <span id="test" class="sIiGonzR6Ys views"></span>&nbsp;&nbsp;&nbsp;Likes: <span class="sIiGonzR6Ys likes"></span>&nbsp;&nbsp;&nbsp;Dislikes: <span class="sIiGonzR6Ys dislikes"></span></p>
                 </div>
+                
             </div>
         </div>
         
@@ -69,6 +74,7 @@
             <div class="section-centered">
                 <div class="video-container">
                 <iframe class="video" src="https://www.youtube.com/embed/mDdElppJ9D8" frameborder="0" allowfullscreen></iframe>
+                <p>Views: <span class="mDdElppJ9D8 views"></span>&nbsp;&nbsp;&nbsp;Likes: <span class="mDdElppJ9D8 likes"></span>&nbsp;&nbsp;&nbsp;Dislikes: <span class="mDdElppJ9D8 dislikes"></span></p>
                 </div>
             </div>
         </div>
@@ -104,6 +110,10 @@
     
     <!-- Loads the embedded subscribe button -->
     <script src="https://apis.google.com/js/platform.js"></script>
+    
+    <!-- code for youtube data api -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="piano-script.js"></script>
 </body>
 
 
