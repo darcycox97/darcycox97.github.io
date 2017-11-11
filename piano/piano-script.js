@@ -47,58 +47,40 @@ function scanPlaylist(playlistID) {
     })
     .then(
         function(response) {
-            
-            console.log(response.result);
             // iterate through each upload and render information in the webpage
             var videos = response.result.items;
             for (var i = 0; i < videos.length; i++) {
-                var videoId = videos[i].contentDetails.videoId;
-                renderInfo(videoId, VIEWS);
-                renderInfo(videoId, LIKES);
-                renderInfo(videoId, DISLIKES);   
+                var videoId = videos[i].contentDetails.videoId; 
+                renderInfo(videoId);
             }
-
         },
         function(error) {
             console.log("Error fetching uploads from playlist");
         }
-    
-    
     );
 }
 
-// info can be either VIEWS, LIKES, or DISLIKES
-function renderInfo(videoID, info) {
-    
-    var fields = "";
-    if (info === VIEWS) {
-        fields = 'items(id,statistics/viewCount)';
-    } else if (info === LIKES) {
-        fields = 'items(id,statistics/likeCount)';
-    } else {
-        // DISLIKES
-        fields = 'items(id,statistics/dislikeCount)';
-    }
+// renders likes, dislikes and views in the html page
+function renderInfo(videoID) {
     
     gapi.client.request({
         'path':API_BASE_URL+'videos',
         'params':
         {
             'part':'statistics,id',
-            'fields': fields,
+            'fields': 'items(id,statistics(viewCount,likeCount,dislikeCount))',
             'id':videoID
         }
     }).then(
         function(response) {
+            
             var stats = response.result.items[0].statistics; // need to append view/likes/dislikes
             var id = response.result.items[0].id;
-            if (info === VIEWS) {
-                $(".views." + id).text(stats.viewCount);
-            } else if (info === LIKES) {
-                $(".likes." + id).text(stats.likeCount);
-            } else {
-                $(".dislikes." + id).text(stats.dislikeCount);
-            }
+
+            // match the video id with either views, likes, or dislikes and set the text appropriately
+            $(".views." + id).text(stats.viewCount);
+            $(".likes." + id).text(stats.likeCount);
+            $(".dislikes." + id).text(stats.dislikeCount);
         },
         function(reason) {
             console.log(reason);
@@ -106,19 +88,3 @@ function renderInfo(videoID, info) {
         }
     );
 }
-
-
-// query youtube api for all uploaded videos from Datty Plays, store the id's.
-
-
-
-// Go through each id in the declared list (represents each video on the webpage).
-for (var i=0; i < 4; i++) {
-    
-    // query statistics info from the youtube api and access view count, likes, dislikes.
-    
-    
-    // search for the html classes "views, likes, dislikes" and match with the current id.
-    
-}
-
