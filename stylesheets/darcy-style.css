@@ -61,7 +61,7 @@ html, body { margin:0; padding:0; font-family: 'Open Sans', sans-serif; height: 
     margin:auto;
 }
 
-.section-heading {
+.section-heading, .back-to-top {
     text-align: center;
 }
 
@@ -160,7 +160,7 @@ html, body { margin:0; padding:0; font-family: 'Open Sans', sans-serif; height: 
     text-align: center;
 }
 
-.video-container{
+.video-container {
     text-align:center;
 }
 
@@ -168,3 +168,25 @@ html, body { margin:0; padding:0; font-family: 'Open Sans', sans-serif; height: 
     width:640px;
     height: 360px;
 }
+
+#playlist {
+    display: block;
+    float:right;
+    position: relative;
+    top:15px;
+}
+
+.back-to-top {
+    text-align: center;
+    color: black;
+}
+
+.back-to-top:hover {
+    opacity: 0.7;
+}
+
+.contents-item {
+    list-style-type: none;
+}
+
+
