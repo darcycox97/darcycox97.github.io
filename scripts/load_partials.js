@@ -4,7 +4,7 @@
 // loads the navbar and sets the appropriate nav item to active
 // loads into an element with id "nav"
 function loadNavBar(activePage) {
-    $("#nav").load("/partials/_navigation.html", function() {
+    $("#nav").load("/partials/navigation.html", function() {
         // make the appropriate nav item active after loading
         $(".navbar ." + activePage).addClass("active-nav-item");
     });
@@ -12,7 +12,7 @@ function loadNavBar(activePage) {
 
 // loads the footer into an element with id "footer"
 function loadFooter() {
-    $("#footer").load("/partials/_footer.html");
+    $("#footer").load("/partials/footer.html");
 }
 
 function loadPartials(pageName) {
