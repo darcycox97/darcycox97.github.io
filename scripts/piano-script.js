@@ -23,7 +23,7 @@ function start() {
          }
     )
     .then(
-        function(response) {   
+        function(response) {
             // pass playlist id to scanner method
             var uploadsPlaylist = response.result.items[0].contentDetails.relatedPlaylists.uploads;
             scanPlaylist(uploadsPlaylist);
@@ -36,13 +36,13 @@ function start() {
 
 // iterates through videos in the playlist and queries for view counts etc. renders info in the html file
 function scanPlaylist(playlistID) {
-    
+
     gapi.client.request({
         'path':API_BASE_URL+'playlistItems',
         'params': {
             'part': 'contentDetails',
             'playlistId': playlistID,
-            'fields':'items(contentDetails/videoId)'   
+            'fields':'items(contentDetails/videoId)'
         }
     })
     .then(
@@ -50,7 +50,7 @@ function scanPlaylist(playlistID) {
             // iterate through each upload and render information in the webpage
             var videos = response.result.items;
             for (var i = 0; i < videos.length; i++) {
-                var videoId = videos[i].contentDetails.videoId; 
+                var videoId = videos[i].contentDetails.videoId;
                 renderInfo(videoId);
             }
         },
@@ -62,7 +62,7 @@ function scanPlaylist(playlistID) {
 
 // renders likes, dislikes and views in the html page
 function renderInfo(videoID) {
-    
+
     gapi.client.request({
         'path':API_BASE_URL+'videos',
         'params':
@@ -73,7 +73,7 @@ function renderInfo(videoID) {
         }
     }).then(
         function(response) {
-            
+
             var stats = response.result.items[0].statistics; // need to append view/likes/dislikes
             var id = response.result.items[0].id;
 
