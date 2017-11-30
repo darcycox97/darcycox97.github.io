@@ -1,0 +1,49 @@
+$nav-color : #2C848C;
+$nav-color-secondary : #226970;
+
+/* Have to be super specific to override bootstrap style so it's not pretty :( */
+
+.navbar.navbar-default.navbar-fixed-top {
+    background-color: $nav-color;
+
+    .navbar-toggle {
+
+        background-color: $nav-color;
+        border:none;
+
+        &:focus {
+            @extend .navbar-toggle;
+        }
+
+        .icon-bar {
+            background-color: white;
+        }
+
+        &:hover, &:hover:focus {
+            background-color: $nav-color-secondary;
+        }
+    }
+
+    .navbar-toggle.navbar-left {
+        float: left;
+        margin-left: 10px;
+    }
+
+    .navbar-collapse, .navbar-nav {
+        border:none;
+    }
+
+    .navbar-nav.nav {
+
+        .active a, li:hover {
+            background-color: $nav-color-secondary;
+        }
+
+        li {
+            a, a:hover {
+                color: white;
+                font-size: 16px;
+            }
+        }
+    }
+}

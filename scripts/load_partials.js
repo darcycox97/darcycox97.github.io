@@ -6,7 +6,7 @@
 function loadNavBar(activePage) {
     $("#nav").load("/partials/navigation.html", function() {
         // make the appropriate nav item active after loading
-        $(".navbar ." + activePage).addClass("active-nav-item");
+        $(".navbar .nav.navbar-nav ." + activePage).addClass("active");
     });
 }
 

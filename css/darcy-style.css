@@ -1,0 +1,155 @@
+/* Have to be super specific to override bootstrap style so it's not pretty :( */
+.navbar.navbar-default.navbar-fixed-top {
+  background-color: #2C848C;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle, .navbar.navbar-default.navbar-fixed-top .navbar-toggle:focus {
+  background-color: #2C848C;
+  border: none;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle:hover, .navbar.navbar-default.navbar-fixed-top .navbar-toggle:hover:focus {
+  background-color: #226970;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle.navbar-left {
+  float: left;
+  margin-left: 10px;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-collapse, .navbar.navbar-default.navbar-fixed-top .navbar-nav {
+  border: none;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-nav.nav .active a, .navbar.navbar-default.navbar-fixed-top .navbar-nav.nav li:hover {
+  background-color: #226970;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-nav.nav li a, .navbar.navbar-default.navbar-fixed-top .navbar-nav.nav li a:hover {
+  color: white;
+  font-size: 16px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  /*container needs to be POSITIONED for absolute positioning of inner footer to work.*/
+  position: relative;
+  width: 100%;
+}
+
+#main {
+  /* Must be same height as footer! */
+  padding-bottom: 75px;
+}
+
+@media (max-width: 767px) {
+  .footer .footer-icon {
+    font-size: 11px;
+  }
+}
+
+.footer-container {
+  height: 75px;
+  overflow: hidden;
+  padding: 0;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-container .footer {
+  color: inherit;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-container .footer .footer-icon {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-container .footer .footer-icon:hover {
+  opacity: 0.7;
+}
+
+.footer-container .footer-heading {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+}
+
+#wrapper {
+  height: 100%;
+  position: relative;
+}
+
+#main {
+  height: 100%;
+}
+
+/****** Full page header *****/
+.full-page {
+  height: 100%;
+}
+
+#background-img {
+  z-index: -3;
+  position: fixed;
+  width: auto;
+  height: 100%;
+}
+
+.flex-centered.vertical {
+  display: flex;
+  align-items: center;
+}
+
+.flex-centered.horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+#title-heading {
+  background-color: #E4E4E4;
+  opacity: 0.6;
+  height: 300px;
+  /* change this depending on screen size */
+}
+
+#title-heading h1 {
+  font-size: 70px;
+  text-align: center;
+  vertical-align: center;
+}
+
+@media (max-width: 767px) {
+  #title-heading {
+    height: 100%;
+    opacity: 0.7;
+  }
+  #title-heading h1 {
+    font-size: 50px;
+  }
+}

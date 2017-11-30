@@ -1,0 +1,60 @@
+$footer-height : 75px;
+
+html, body {
+    margin:0;
+    padding: 0;
+}
+
+#footer {
+    /*container needs to be POSITIONED for absolute positioning of inner footer to work.*/
+    position:relative;
+    width: 100%;
+}
+
+#main {
+    /* Must be same height as footer! */
+    padding-bottom: $footer-height;
+}
+
+@media(max-width:767px){
+    .footer .footer-icon {
+        font-size: 11px;
+    }
+}
+
+
+.footer-container {
+
+    height: $footer-height;
+    overflow: hidden;
+    padding: 0;
+    background-color: black;
+    color: white;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+
+    .footer {
+        color: inherit;
+        text-align: center;
+        width:100%;
+
+        .footer-icon {
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                opacity:0.7;
+            }
+        }
+    }
+
+    .footer-heading {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
