@@ -1,0 +1,20 @@
+.inline-link {
+    text-decoration: none;
+    color: #8B228E;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.text-centered {
+    text-align: center;
+}

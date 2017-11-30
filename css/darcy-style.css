@@ -92,12 +92,28 @@ html, body {
   padding-bottom: 10px;
 }
 
-html {
-  height: 100%;
+.inline-link {
+  text-decoration: none;
+  color: #8B228E;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+html, body {
   height: 100%;
 }
 
@@ -107,8 +123,9 @@ body {
 }
 
 #main {
-  height: 100%;
+  min-height: 100%;
   background-color: white;
+  overflow: hidden;
 }
 
 /****** Full page header *****/
@@ -153,5 +170,36 @@ body {
   }
   #title-heading h1 {
     font-size: 50px;
+  }
+}
+
+.page-section {
+  padding-top: 10px;
+  border-top: 1px solid #EDEDED;
+}
+
+.page-section #img-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.page-section * {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+  .page-section {
+    /* Paragraphs are stacked vertically at this size. Should be justified */
+  }
+  .page-section p {
+    text-align: justify;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-section #about-container {
+    display: flex;
+    align-items: center;
   }
 }
