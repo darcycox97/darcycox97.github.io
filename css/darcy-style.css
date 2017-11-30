@@ -1,6 +1,7 @@
 /* Have to be super specific to override bootstrap style so it's not pretty :( */
 .navbar.navbar-default.navbar-fixed-top {
   background-color: #2C848C;
+  border: none;
 }
 
 .navbar.navbar-default.navbar-fixed-top .navbar-toggle, .navbar.navbar-default.navbar-fixed-top .navbar-toggle:focus {
@@ -107,6 +108,7 @@ body {
 
 #main {
   height: 100%;
+  background-color: white;
 }
 
 /****** Full page header *****/

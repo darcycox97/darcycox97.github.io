@@ -21,7 +21,8 @@
 <body>
 
     <div id="nav"></div>
-    <img id="background-img" src="background.jpg">
+
+    <img class="rellax" data-rellax-speed="3" id="background-img" src="/res/background.jpg">
 
     <div id="wrapper">
 
@@ -36,6 +37,10 @@
         </div>
 
         <div id="main">
+            <div class="container">
+
+            </div>
+
 
         </div>
 
@@ -87,7 +92,10 @@
         <!-- <footer id="footer"></footer> -->
 
 <!-- /    </div> End of wrapper  -->
-
     <script>loadPartials("home");</script>
+    <script src="/scripts/rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax('.rellax');
+    </script>
 </body>
 </html>
