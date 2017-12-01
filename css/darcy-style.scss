@@ -1,0 +1,177 @@
+@import '../partials/_navigation';
+@import '../partials/_footer';
+@import '../partials/_text';
+
+// @media(max-width:767px){} xs
+// @media(min-width:768px){} s
+// @media(min-width:992px){} md
+// @media(min-width:1200px){} lg
+
+html,body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px;
+}
+
+#wrapper {
+    height: 100%;
+    position: relative;
+}
+
+#main {
+    min-height: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+/****** Full page header *****/
+
+.full-page {
+    height: 100%;
+}
+
+#background-img {
+    z-index: -3;
+    position: fixed;
+    width:auto;
+    height: 100%;
+}
+
+.flex-centered.vertical {
+    display: flex;
+    align-items: center;
+}
+
+.flex-centered.horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+
+#title-heading {
+    background-color: #E4E4E4;
+    opacity: 0.6;
+    height: 300px; /* change this depending on screen size */
+
+    h1 {
+        font-size: 70px;
+        text-align: center;
+        vertical-align: center;
+    }
+}
+
+@media(max-width:767px){
+    #title-heading {
+        height: 100%;
+        opacity: 0.7;
+        h1 {
+            font-size: 50px;
+        }
+    }
+}
+
+.page-section {
+
+    padding-top:10px;
+    border-top: 1px solid #EDEDED;
+
+    #img-profile {
+        width: 200px;
+        height: 200px;
+        border-radius: 200px;
+    }
+
+    * {
+        padding-bottom: 10px;
+    }
+
+    @media(max-width:991px) {
+
+        #about-container {
+            /* Paragraphs are stacked vertically at this size. Should be justified */
+            p {
+                text-align: justify;
+            }
+        }
+    }
+
+    @media(min-width:992px) {
+        #about-container, #playlist-container {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+}
+
+/********** Piano page style ************/
+#subscribe-button {
+    position: fixed;
+    right: 10px;
+    top:60px;
+    z-index: 2;
+
+    * {
+        padding:0;
+        margin:0;
+        text-align: center;
+    }
+
+    @media(max-width:767px){
+        & {
+            // gets in the way on small screens, shouldnt display
+            display:none;
+        }
+    }
+}
+
+.contents {
+    list-style-type: none;
+}
+
+.video {
+    width:640px;
+    height: 360px;
+
+    @media(max-width:767px){
+        & {
+            width:426px;
+            height: 240px;
+        }
+    }
+
+
+    @media(max-width:550px){
+        & {
+            width:300px;
+            height: 220px;
+        }
+    }
+}
+
+.back-to-top {
+    color:black;
+
+    &:hover {
+        color: black;
+        text-decoration: none;
+        opacity: 0.7;
+    }
+
+    &:focus {
+        color:black;
+        text-decoration: none;
+    }
+}
+
+.playlist {
+    width: 320;
+
+    @media(max-width:500px){
+        & {
+            width:230px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.inline-link {
+    text-decoration: none;
+    color: #8B228E;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+        color: #8B228E;
+    }
+
+    &:visited {
+        color: #8B228E;
+        text-decoration: none;
+    }
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.text-centered {
+    text-align: center;
+}

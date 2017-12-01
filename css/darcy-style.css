@@ -1,0 +1,283 @@
+/* Have to be super specific to override bootstrap style so it's not pretty :( */
+.navbar.navbar-default.navbar-fixed-top {
+  background-color: #2C848C;
+  border: none;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle, .navbar.navbar-default.navbar-fixed-top .navbar-toggle:focus {
+  background-color: #2C848C;
+  border: none;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle:hover, .navbar.navbar-default.navbar-fixed-top .navbar-toggle:hover:focus {
+  background-color: #226970;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-toggle.navbar-left {
+  float: left;
+  margin-left: 10px;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-collapse, .navbar.navbar-default.navbar-fixed-top .navbar-nav {
+  border: none;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-nav.nav .active a, .navbar.navbar-default.navbar-fixed-top .navbar-nav.nav li:hover {
+  background-color: #226970;
+}
+
+.navbar.navbar-default.navbar-fixed-top .navbar-nav.nav li a, .navbar.navbar-default.navbar-fixed-top .navbar-nav.nav li a:hover {
+  color: white;
+  font-size: 16px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  /*container needs to be POSITIONED for absolute positioning of inner footer to work.*/
+  position: relative;
+  width: 100%;
+}
+
+#main {
+  /* Must be same height as footer! */
+  padding-bottom: 75px;
+}
+
+@media (max-width: 767px) {
+  .footer .footer-icon {
+    font-size: 11px;
+  }
+}
+
+.footer-container {
+  height: 75px;
+  overflow: hidden;
+  padding: 0;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-container .footer {
+  color: inherit;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-container .footer .footer-icon {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-container .footer .footer-icon:hover {
+  opacity: 0.7;
+}
+
+.footer-container .footer-heading {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.inline-link {
+  text-decoration: none;
+  color: #8B228E;
+}
+
+.inline-link:hover, .inline-link:focus {
+  text-decoration: underline;
+  color: #8B228E;
+}
+
+.inline-link:visited {
+  color: #8B228E;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+#wrapper {
+  height: 100%;
+  position: relative;
+}
+
+#main {
+  min-height: 100%;
+  background-color: white;
+  overflow: hidden;
+}
+
+/****** Full page header *****/
+.full-page {
+  height: 100%;
+}
+
+#background-img {
+  z-index: -3;
+  position: fixed;
+  width: auto;
+  height: 100%;
+}
+
+.flex-centered.vertical {
+  display: flex;
+  align-items: center;
+}
+
+.flex-centered.horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+#title-heading {
+  background-color: #E4E4E4;
+  opacity: 0.6;
+  height: 300px;
+  /* change this depending on screen size */
+}
+
+#title-heading h1 {
+  font-size: 70px;
+  text-align: center;
+  vertical-align: center;
+}
+
+@media (max-width: 767px) {
+  #title-heading {
+    height: 100%;
+    opacity: 0.7;
+  }
+  #title-heading h1 {
+    font-size: 50px;
+  }
+}
+
+.page-section {
+  padding-top: 10px;
+  border-top: 1px solid #EDEDED;
+}
+
+.page-section #img-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.page-section * {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+  .page-section #about-container {
+    /* Paragraphs are stacked vertically at this size. Should be justified */
+  }
+  .page-section #about-container p {
+    text-align: justify;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-section #about-container, .page-section #playlist-container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/********** Piano page style ************/
+#subscribe-button {
+  position: fixed;
+  right: 10px;
+  top: 60px;
+  z-index: 2;
+}
+
+#subscribe-button * {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  #subscribe-button {
+    display: none;
+  }
+}
+
+.contents {
+  list-style-type: none;
+}
+
+.video {
+  width: 640px;
+  height: 360px;
+}
+
+@media (max-width: 767px) {
+  .video {
+    width: 426px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 550px) {
+  .video {
+    width: 300px;
+    height: 220px;
+  }
+}
+
+.back-to-top {
+  color: black;
+}
+
+.back-to-top:hover {
+  color: black;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.back-to-top:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.playlist {
+  width: 320;
+}
+
+@media (max-width: 500px) {
+  .playlist {
+    width: 230px;
+  }
+}
