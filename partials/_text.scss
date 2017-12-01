@@ -2,8 +2,14 @@
     text-decoration: none;
     color: #8B228E;
 
-    &:hover {
+    &:hover, &:focus {
         text-decoration: underline;
+        color: #8B228E;
+    }
+
+    &:visited {
+        color: #8B228E;
+        text-decoration: none;
     }
 }
 

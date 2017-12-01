@@ -1,3 +1,7 @@
+// This script scans the Datty Plays YouTube channel using the youtube data api.
+// It requests the views, likes, and dislikes from the api and renders this information in the html page.
+// AUTHOR: ME (darcy cox)
+
 var CHANNEL_ID = '97darcman';
 var API_BASE_URL = 'https://www.googleapis.com/youtube/v3/';
 var API_KEY = 'AIzaSyBSdH19KosGvlaxmoXZ5Ra1u3PPRZmZULM';
@@ -6,7 +10,11 @@ var LIKES = 'LIKES';
 var DISLIKES = 'DISLIKES';
 
 // load js api client to enable api calls
-gapi.load('client', start);
+// start only when DOM is ready
+$(document).ready(function() {
+    gapi.load('client', start);
+});
+
 function start() {
     gapi.client.init({'apiKey':API_KEY})
     .then(
