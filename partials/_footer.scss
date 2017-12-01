@@ -58,3 +58,16 @@ html, body {
         padding-bottom: 10px;
     }
 }
+
+/* Custom tooltip theme */
+.tippy-tooltip.darcy-theme {
+  background-color: #8B228E;
+  color: white;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.tippy-popper[x-placement=top] .tippy-tooltip.darcy-theme [x-arrow] {
+    border-top: 7px solid #8B228E; /* your color here */
+}
