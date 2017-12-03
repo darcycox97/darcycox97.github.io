@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.gallery {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.gallery button {
+    height: 100%;
+}
+
+.gallery .gallery-images{
+    height : 300px;
+    background-color: #AAAAAA;
+    text-align: center;
+    width: 500px;
+    overflow: hidden;
+}
+
+.gallery .image.active {
+    display : block;
+    margin: auto;
+}
+
+.gallery .image {
+    display: none;
+    height: 100%;
+    width: auto;
+}
+
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <button id="btnPrevImg" type="button">Previous Image</button>
+        <div class="gallery-images"></div>
+        <button id="btnNextImg" type="button">Next Image</button>
+    </div>
+
+
+<script>
+
+var imgIndex = 0; // global to keep track of which image is displayed
+$(document).ready(function() {
+    var dir = '/res/screenshots/tatai/';
+    $.ajax({
+        url: dir,
+        success : function(data) {
+
+            // the directory contents are returned as list items. find these.
+            var images = $(data).find('li a');
+
+            // access the image names and create img tags based on each
+            for (var i = 0; i < images.length; i++) {
+
+                var img = '<div class="image" style="background-image:url(' + dir + $(images[i]).html() +
+                '); background-size:contain; background-position: center; background-repeat:no-repeat;"></div>';
+
+                // var img = '<img src="' + dir + $(images[i]).html() + '">';
+                $(".gallery .gallery-images").append(img);
+            }
+
+            // make the first image active
+            $(".gallery .gallery-images").children('.image').eq(0).addClass("active");
+
+            // define behaviour of buttons only when images have loaded.
+            $(".gallery #btnNextImg").click(function() {
+
+                var galleryImages = $(".gallery .gallery-images").children();
+
+                galleryImages.eq(imgIndex).removeClass("active");
+
+                imgIndex++;
+
+                if (imgIndex >= galleryImages.length) {
+                    imgIndex = 0;
+                }
+
+                galleryImages.eq(imgIndex).addClass("active");
+
+            })
+
+            $(".gallery #btnPrevImg").click(function() {
+
+                var galleryImages = $(".gallery .gallery-images").children();
+
+                galleryImages.eq(imgIndex).removeClass("active");
+
+                imgIndex--;
+
+                if (imgIndex < 0) {
+                    imgIndex = galleryImages.length - 1;
+                }
+
+                galleryImages.eq(imgIndex).addClass("active");
+
+            })
+        }
+    })
+});
+
+
+</script>
+
+</body>
+
+
+
+
+</html>
