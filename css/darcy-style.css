@@ -153,22 +153,22 @@ body {
   right: 0;
 }
 
-#nextImg, #prevImg {
+.nextImg, .prevImg {
   position: absolute;
   top: 50%;
   z-index: 3;
   color: black;
 }
 
-#nextImg:hover, #prevImg:hover {
+.nextImg:hover, .prevImg:hover {
   opacity: 0.6;
 }
 
-#nextImg {
+.nextImg {
   right: 15px;
 }
 
-#prevImg {
+.prevImg {
   left: 15px;
 }
 

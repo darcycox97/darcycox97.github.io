@@ -1,28 +1,51 @@
 // this script provides the functionality for the image gallery that I implemented.
 
+
 $(document).ready(function() {
-    var dir = '/res/screenshots/tatai/';
-    var images = ['tatai-custom-quiz.png','tatai-gameplay.png','tatai-home.png','website.PNG'];
+    loadGallery({
+        dir: '/res/screenshots/tatai/',
+        imgs: ['tatai-custom-quiz.png','tatai-gameplay.png','tatai-home.png'],
+        galleryId: 'tatai-gallery'
+    });
+    loadGallery({
+        dir: '/res/screenshots/website/',
+        imgs: ['mobile-nav.png','website-desktop.png','website-mobile.png'],
+        galleryId: 'website-gallery'
+    });
+});
+
+
+// function to populate the image galleries, takes an object with the following properties:
+// dir: the directory containing the images (string)
+// imgs : an array of the names of the images to be displayed (strings)
+// galleryId : the id of the image gallery to populate (string)
+// make one call per image gallery
+function loadGallery(config) {
+    //var dir = '/res/screenshots/tatai/';
+    var dir = config.dir;
+    var images = config.imgs;
+    var gallery = config.galleryId;
+    //var images = ['tatai-custom-quiz.png','tatai-gameplay.png','tatai-home.png','website.PNG'];
 
     for (var i = 0; i < images.length; i++) {
 
         var img = '<div class="image" style="background-image:url(' + dir + images[i] +');"></div>';
 
-        $(".gallery").append(img);
+        $("#" + gallery).append(img);
     }
 
     // make the first image active
-    var slides = $(".gallery .image");
+    var slides = $("#" + gallery + " .image");
     var slideIndex = 0;
     slides.eq(slideIndex).addClass("active");
 
     // define behaviour of buttons only when images have loaded.
-    $("#nextImg").click(function(e) {
+    $("#" + gallery + " .nextImg").click(function(e) {
         e.preventDefault();
         plusSlides(1);
     });
 
-    $("#prevImg").click(function(e) {
+    $("#" + gallery + " .prevImg").click(function(e) {
         e.preventDefault();
         plusSlides(-1);
     });
@@ -46,4 +69,4 @@ $(document).ready(function() {
             slides.eq(slideIndex).addClass('in from-left active');
         }
     }
-});
+}
