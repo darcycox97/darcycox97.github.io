@@ -1,0 +1,80 @@
+.gallery {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    display:block;
+    height:100%;
+}
+
+.gallery .image.active {
+    left:0;
+    right:0;
+}
+
+#nextImg, #prevImg {
+    position:absolute;
+    top:50%;
+    z-index: 3;
+    color:black;
+}
+
+#nextImg:hover, #prevImg:hover {
+    opacity: 0.6;
+}
+
+#nextImg {
+    right: 15px;
+}
+
+#prevImg {
+    left: 15px;
+}
+
+.from-left.out {
+    animation-name : out-from-left;
+    animation-duration:1s;
+}
+
+.from-left.in {
+    animation-name : in-from-left;
+    animation-duration:1s;
+}
+
+.from-right.out {
+    animation-name : out-from-right;
+    animation-duration:1s;
+}
+
+.from-right.in {
+    animation-name : in-from-right;
+    animation-duration:1s;
+}
+
+@keyframes out-from-right {
+    0% { left: 0px; right:0px;}
+    100% {left:-100%; right:100%;}
+}
+
+@keyframes in-from-right {
+    0% { left: 100%; right: -100%}
+    100% {left:0px; right:0px;}
+}
+
+
+@keyframes out-from-left {
+    0% { left: 0px; right:0px;}
+    100% {left:100%; right: -100%;}
+
+}
+
+@keyframes in-from-left {
+    0% { left: -100%; right : 100%;}
+    100% {left:0px; right: 0px;}
+}

@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<title>Darcy Cox</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+
 .gallery {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-}
-
-.gallery button {
-    height: 100%;
-}
-
-.gallery .gallery-images{
-    height : 300px;
-    background-color: #AAAAAA;
-    text-align: center;
-    width: 500px;
+    height: 500px;
+    position: relative;
     overflow: hidden;
 }
 
-.gallery .image.active {
-    display : block;
-    margin: auto;
+.gallery .image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    display:block;
+    height:100%;
 }
 
-.gallery .image {
-    display: none;
-    height: 100%;
-    width: auto;
+.gallery .image.active {
+    left:0;
+    right:0;
 }
+
+#nextImg, #prevImg {
+    position:absolute;
+    top:50%;
+    z-index: 3;
+    color:black;
+}
+
+#nextImg:hover, #prevImg:hover {
+    opacity: 0.6;
+}
+
+#nextImg {
+    right: 15px;
+}
+
+#prevImg {
+    left: 15px;
+}
+
+.from-left.out {
+    animation-name : out-from-left;
+    animation-duration:1s;
+}
+
+.from-left.in {
+    animation-name : in-from-left;
+    animation-duration:1s;
+}
+
+.from-right.out {
+    animation-name : out-from-right;
+    animation-duration:1s;
+}
+
+.from-right.in {
+    animation-name : in-from-right;
+    animation-duration:1s;
+}
+
+@keyframes out-from-right {
+    0% { left: 0px; right:0px;}
+    100% {left:-100%; right:100%;}
+}
+
+@keyframes in-from-right {
+    0% { left: 100%; right: -100%}
+    100% {left:0px; right:0px;}
+}
+
+
+@keyframes out-from-left {
+    0% { left: 0px; right:0px;}
+    100% {left:100%; right: -100%;}
+
+}
+
+@keyframes in-from-left {
+    0% { left: -100%; right : 100%;}
+    100% {left:0px; right: 0px;}
+}
+
 
 
 
@@ -42,72 +96,67 @@
 <body>
 
     <div class="gallery">
-        <button id="btnPrevImg" type="button">Previous Image</button>
-        <div class="gallery-images"></div>
-        <button id="btnNextImg" type="button">Next Image</button>
+        <a id="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
+        <a id="nextImg" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
     </div>
 
 
 <script>
 
-var imgIndex = 0; // global to keep track of which image is displayed
 $(document).ready(function() {
     var dir = '/res/screenshots/tatai/';
     $.ajax({
         url: dir,
         success : function(data) {
 
-            // the directory contents are returned as list items. find these.
+            // the directory contents are returned as list items. access these.
             var images = $(data).find('li a');
 
-            // access the image names and create img tags based on each
+            // access the images and create a div for each
             for (var i = 0; i < images.length; i++) {
 
-                var img = '<div class="image" style="background-image:url(' + dir + $(images[i]).html() +
-                '); background-size:contain; background-position: center; background-repeat:no-repeat;"></div>';
+                var img = '<div class="image" style="background-image:url(' + dir + $(images[i]).html() +');"></div>';
 
-                // var img = '<img src="' + dir + $(images[i]).html() + '">';
-                $(".gallery .gallery-images").append(img);
+                $(".gallery").append(img);
             }
 
             // make the first image active
-            $(".gallery .gallery-images").children('.image').eq(0).addClass("active");
+            var slides = $(".gallery .image");
+            var slideIndex = 0;
+            slides.eq(slideIndex).addClass("active");
 
             // define behaviour of buttons only when images have loaded.
-            $(".gallery #btnNextImg").click(function() {
+            $("#nextImg").click(function() {
+                plusSlides(1);
+            });
 
-                var galleryImages = $(".gallery .gallery-images").children();
+            $("#prevImg").click(function() {
+                plusSlides(-1);
+            });
 
-                galleryImages.eq(imgIndex).removeClass("active");
-
-                imgIndex++;
-
-                if (imgIndex >= galleryImages.length) {
-                    imgIndex = 0;
+            function plusSlides(direction) {
+                slides.removeClass();
+                slides.addClass('image'); // re add the image class becasue it got removed on the previous line
+                if (direction >= 0) {
+                    slides.eq(slideIndex).addClass('out from-right');
+                    slideIndex++;
+                    if (slideIndex >= slides.length) {
+                        slideIndex = 0;
+                    }
+                    slides.eq(slideIndex).addClass('in from-right active')
+                } else {
+                    slides.eq(slideIndex).addClass('out from-left')
+                    slideIndex--;
+                    if (slideIndex < 0) {
+                        slideIndex = slides.length - 1;
+                    }
+                    slides.eq(slideIndex).addClass('in from-left active');
                 }
-
-                galleryImages.eq(imgIndex).addClass("active");
-
-            })
-
-            $(".gallery #btnPrevImg").click(function() {
-
-                var galleryImages = $(".gallery .gallery-images").children();
-
-                galleryImages.eq(imgIndex).removeClass("active");
-
-                imgIndex--;
-
-                if (imgIndex < 0) {
-                    imgIndex = galleryImages.length - 1;
-                }
-
-                galleryImages.eq(imgIndex).addClass("active");
-
-            })
+            }
         }
-    })
+    });
 });
+
 
 
 </script>
