@@ -1,6 +1,7 @@
 @import '../partials/_navigation';
 @import '../partials/_footer';
 @import '../partials/_text';
+@import '../partials/_image-gallery';
 
 // @media(max-width:767px){} xs
 // @media(min-width:768px){} s
@@ -167,7 +168,7 @@ body {
 }
 
 .playlist {
-    width: 320;
+    width: 320px;
 
     @media(max-width:500px){
         & {
@@ -180,4 +181,15 @@ body {
 
 #projects-title {
     font-size: 60px;
+}
+
+.no-padding {
+    padding:0;
+    margin:0;
+}
+
+.project {
+    padding-bottom:10px;
+    border-bottom: 1px solid #EDEDED;
+    overflow:hidden; /* this works but what why?!?! */
 }
