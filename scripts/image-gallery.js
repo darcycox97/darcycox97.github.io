@@ -4,12 +4,12 @@
 $(document).ready(function() {
     loadGallery({
         dir: '/res/screenshots/tatai/',
-        imgs: ['tatai-home.png', 'tatai-gameplay.png', 'mid-game.png', 'tatai-custom-quiz.png', 'user-progress-1.png', 'user-progress-2.png'],
+        imgs: ['tatai-home.png', 'tatai-gameplay.png', 'mid-game.PNG', 'tatai-custom-quiz.png', 'user-progress-1.PNG', 'user-progress-2.PNG'],
         galleryId: 'tatai-gallery'
     });
     loadGallery({
         dir: '/res/screenshots/website/',
-        imgs: ['website-desktop.png','website-mobile.png', 'mobile-nav.png'],
+        imgs: ['website-desktop.png','website-mobile.png', 'mobile-nav.PNG'],
         galleryId: 'website-gallery'
     });
     loadGallery({
