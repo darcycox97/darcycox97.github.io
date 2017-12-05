@@ -1,7 +1,16 @@
 .gallery {
-    height: 200px;
+    height: 400px;
     position: relative;
     overflow: hidden;
+    border: 1px solid #EDEDED;
+    background-color: #FBFBFB;
+    margin-bottom: 20px;
+
+    @media(max-width:767px){
+        & {
+            height: 250px;
+        }
+    }
 }
 
 .gallery .image {
@@ -18,7 +27,7 @@
     right:0;
 }
 
-.nextImg, .prevImg {
+.nextImg, .prevImg, .nextImg:focus, .prevImg:focus, .nextImg:visited, .prevImg:visited {
     position:absolute;
     top:50%;
     z-index: 3;

@@ -31,34 +31,78 @@
             <div class="container-fluid page-section">
                 <h1 class="text-centered">My Projects</h1>
                 <p class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                    I have undertaken a number of projects since I started programming, which
-                    are showcased on this page.
+                    I have undertaken a number of projects since I started programming, which I have showcased on this page.
                     Some of these projects were a required part of Software Engineering courses,
                     and some I have done in my free time.
                 </p>
             </div>
             <div class="container-fluid page-section">
                 <!-- on larger screen projects will be across 2 columns -->
-                <div class="col-xs-12 col-md-6" id="firstColumn"> <!-- first column (on md+ screens) -->
-                    <h1 class="text-centered">T&#257;tai!</h1>
-                    <p class="col-xs-12 col-sm-10 col-sm-offset-1">
-                        T&#257;tai! was a thing that we had to do. It was loads of fun! Loved it!
-                        More generic description goes here blah blah blah.
-                    </p>
-                    <div id="tatai-gallery" class="gallery col-sm-10 col-sm-offset-1">
-                        <a class="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
-                        <a class="nextImg" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
+                <div class="col-xs-12 col-md-6 no-padding" id="firstColumn"> <!-- first column (on md+ screens) -->
+                    <div class="project">
+                        <h1 class="text-centered">T&#257;tai!</h1>
+                        <p class="col-xs-12 col-sm-10 col-sm-offset-1">
+                            T&#257;tai! was a project that all part II Software Engineers had to complete in groups of two.
+                            We were given a short project brief detailing the main functionality required, and were left to build the
+                            application as we saw fit. Having no skeleton code, we had to think very carefully about the overall system design
+                            and how we would coordinate our code. We decided our target users were to be young M&#257;ori children, who would be
+                            using the app to improve their basic maths.
+                        </p>
+                        <p class="col-sm-10 col-sm-offset-1 col-xs-12">
+                            This was my first experience programming in a team, and consequently I learnt a lot from this project.
+                        </p>
+                        <div id="tatai-gallery" class="gallery col-sm-10 col-sm-offset-1">
+                            <a class="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
+                            <a class="nextImg" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
+                        </div>
+                        <p class="col-sm-10 col-sm-offset-1 text-centered"><a href="https://github.com/darcycox97/Tatai" target="_blank" class="inline-link">See the GitHub</a></p>
+                    </div>
+                    <div class="project">
+                        <h1 class="text-centered">Arduino Project</h1>
+                        <p class="col xs-12 col-sm-10 col-sm-offset-1">
+                            One of my friends found an old car phone and thought it would be cool to program it using an Arduino,
+                            and use it as a sort of control panel in the car. For example it might display the current temperature and
+                            could control some of the car's electronics. My friend is relatively comfortable with the electrical side of things, and
+                            approached me to help with the programming part. This project is really ambitious but will probably be one of the most rewarding
+                            among the list of projects here.
+                        </p>
+                        <div class="gallery col-sm-10 col-sm-offset-1" id="arduino-gallery">
+                            <a class="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
+                            <a class="nextImg" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6"> <!-- second column on md+ screens -->
-                    <h1 class="text-centered">T&#257;tai!</h1>
-                    <p class="col-xs-12 col-sm-10 col-sm-offset-1">
-                        T&#257;tai! was a thing that we had to do. It was loads of fun! Loved it!
-                        More generic description goes here blah blah blah.
-                    </p>
-                    <div id="website-gallery" class="gallery col-xs-12 col-sm-10 col-sm-offset-1">
-                        <a class="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
-                        <a class="nextImg" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
+                <div class="col-xs-12 col-md-6 no-padding"> <!-- second column on md+ screens -->
+                    <div class="project">
+                        <h1 class="text-centered">Personal Website</h1>
+                        <p class="col-xs-12 col-sm-10 col-sm-offset-1">
+                            There isn't much to say here, you're already looking at it! I'm essentially using this
+                            as an ongoing project to teach myself web development skills. The website is fully responsive thanks to
+                            Bootstrap, and some pages render live data by making API calls. For example, the view counts on my piano
+                            videos are real data from the YouTube api.
+                        </p>
+                        <div id="website-gallery" class="gallery col-xs-12 col-sm-10 col-sm-offset-1">
+                            <a class="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
+                            <a class="nextImg" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
+                        </div>
+                        <p class="col-sm-10 col-sm-offset-1 text-centered"><a href="https://github.com/darcycox97/darcycox97.github.io" target="_blank" class="inline-link">See the GitHub</a></p>
+                    </div>
+                    <div class="project">
+                        <h1 class="text-centered">Cluedo</h1>
+                        <p class="col xs-12 col-sm-10 col-sm-offset-1">
+                            This is one of my more ambitious ongoing projects. What I am aiming for is a GUI application that
+                            simulates the board game Cluedo, with reasonable AI players, or even other online players. So far
+                            I have managed to build a basic command line version of the app.
+                        </p>
+                        <p class="col-sm-10 col-sm-offset-1 text-centered"><a href="https://github.com/darcycox97/Cluedo" target="_blank" class="inline-link">See the GitHub</a></p>
+                    </div>
+                    <div class="project">
+                        <h1 class="text-centered">Sorting Algorithms</h1>
+                        <p class="col xs-12 col-sm-10 col-sm-offset-1">
+                            This one isn't very exciting. I implemented a bunch of sorting algorithms that we had been taught in class.
+                            It was really just a small project to help my understanding of data structures.
+                        </p>
+                        <p class="col-sm-10 col-sm-offset-1 text-centered"><a href="https://github.com/darcycox97/Sorting" target="_blank" class="inline-link">See the GitHub</a></p>
                     </div>
                 </div>
             </div>
@@ -67,45 +111,45 @@
     </div>
 
     <!-- <div id="fullpage">
-        <div class="section full-page">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h1 class="text-centered projects-title">My Projects</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="col-xs-12 col-md-6 col-md-offset-3">
-                        I have undertaken a number of projects since I started programming.
-                        These are showcased on this page.
-                        Some of these projects were a required part of Software Engineering courses,
-                        and some I have done in my free time.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="section full-page">
-            <div class="container">
-                <h1 class="text-centered">T&#257;tai!</h1>
+    <div class="section full-page">
+    <div class="container">
+    <div class="row">
+    <div class="col-xs-12">
+    <h1 class="text-centered projects-title">My Projects</h1>
+</div>
+</div>
+<div class="row">
+<p class="col-xs-12 col-md-6 col-md-offset-3">
+I have undertaken a number of projects since I started programming.
+These are showcased on this page.
+Some of these projects were a required part of Software Engineering courses,
+and some I have done in my free time.
+</p>
+</div>
+</div>
+</div>
+<div class="section full-page">
+<div class="container">
+<h1 class="text-centered">T&#257;tai!</h1>
 
-            </div>
-        </div>
-        <div class="section full-page">
-            <div class="container">
-                <h1 class="text-centered">Personal Website</h1>
+</div>
+</div>
+<div class="section full-page">
+<div class="container">
+<h1 class="text-centered">Personal Website</h1>
 
-            </div>
-        </div>
-        <div class="section full-page">
-            <div class="container">
-                <h1 class="text-centered">Personal Website</h1>
+</div>
+</div>
+<div class="section full-page">
+<div class="container">
+<h1 class="text-centered">Personal Website</h1>
 
-            </div>
-        </div> -->
+</div>
+</div> -->
 
 
-    <script>
-        loadPartials('projects');
-    </script>
+<script>
+loadPartials('projects');
+</script>
 </body>
 </html>

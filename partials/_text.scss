@@ -1,8 +1,10 @@
 .inline-link {
-    text-decoration: none;
-    color: #8B228E;
+    &, &:focus {
+        text-decoration: none;
+        color: #8B228E;
+    }
 
-    &:hover, &:focus {
+    &:hover {
         text-decoration: underline;
         color: #8B228E;
     }

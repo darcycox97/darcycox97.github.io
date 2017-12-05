@@ -4,13 +4,18 @@
 $(document).ready(function() {
     loadGallery({
         dir: '/res/screenshots/tatai/',
-        imgs: ['tatai-custom-quiz.png','tatai-gameplay.png','tatai-home.png'],
+        imgs: ['tatai-home.png', 'tatai-gameplay.png', 'mid-game.png', 'tatai-custom-quiz.png', 'user-progress-1.png', 'user-progress-2.png'],
         galleryId: 'tatai-gallery'
     });
     loadGallery({
         dir: '/res/screenshots/website/',
-        imgs: ['mobile-nav.png','website-desktop.png','website-mobile.png'],
+        imgs: ['website-desktop.png','website-mobile.png', 'mobile-nav.png'],
         galleryId: 'website-gallery'
+    });
+    loadGallery({
+        dir: '/res/screenshots/arduino/',
+        imgs: ['phone-1.jpg','phone-2.jpg'],
+        galleryId: 'arduino-gallery'
     });
 });
 

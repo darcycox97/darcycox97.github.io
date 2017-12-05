@@ -182,3 +182,14 @@ body {
 #projects-title {
     font-size: 60px;
 }
+
+.no-padding {
+    padding:0;
+    margin:0;
+}
+
+.project {
+    padding-bottom:10px;
+    border-bottom: 1px solid #EDEDED;
+    overflow:hidden; /* this works but what why?!?! */
+}
