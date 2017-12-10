@@ -1,16 +1,18 @@
+$purple : #8B228E;
+
 .inline-link {
     &, &:focus {
         text-decoration: none;
-        color: #8B228E;
+        color: $purple;
     }
 
     &:hover {
         text-decoration: underline;
-        color: #8B228E;
+        color: $purple;
     }
 
     &:visited {
-        color: #8B228E;
+        color: $purple;
         text-decoration: none;
     }
 }

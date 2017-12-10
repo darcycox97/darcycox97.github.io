@@ -8,6 +8,8 @@
 // @media(min-width:992px){} md
 // @media(min-width:1200px){} lg
 
+$purple : #8B228E;
+
 html,body {
     height: 100%;
 }
@@ -192,4 +194,11 @@ body {
     padding-bottom:10px;
     border-bottom: 1px solid #EDEDED;
     overflow:hidden; /* this works somehow */
+}
+
+#my-projects {
+    background-color: $nav-color-secondary;
+    color: white;
+    border-top: none;
+    padding-bottom:10px;
 }

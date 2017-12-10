@@ -424,3 +424,10 @@ body {
   overflow: hidden;
   /* this works somehow */
 }
+
+#my-projects {
+  background-color: #226970;
+  color: white;
+  border-top: none;
+  padding-bottom: 10px;
+}
