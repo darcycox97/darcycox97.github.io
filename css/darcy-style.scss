@@ -181,12 +181,11 @@ body {
 
 /**** Projects page ******/
 
-#projects-title {
-    font-size: 60px;
-}
-
 .no-padding {
     padding:0;
+}
+
+.no-margin {
     margin:0;
 }
 
@@ -196,9 +195,48 @@ body {
     overflow:hidden; /* this works somehow */
 }
 
-#my-projects {
+.page-heading {
     background-color: $nav-color-secondary;
     color: white;
     border-top: none;
     padding-bottom:10px;
+
+    h1 {
+        font-size: 60px;
+    }
+}
+
+#track-image {
+    width:auto;
+    height:200px;
+    position: relative;
+}
+
+
+#last-listened {
+        &.glyphicon {
+            vertical-align: middle;
+            padding: 0 10px;
+            font-size: 40px;
+        }
+
+    vertical-align: top;
+}
+
+.glyphicon.glyphicon-volume-up {
+    animation-name: blink;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity : 0.5;
+    }
+    100% {
+        opacity: 1.0;
+    }
 }
