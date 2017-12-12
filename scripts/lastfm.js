@@ -4,6 +4,13 @@ var api_root = 'http://ws.audioscrobbler.com/2.0/';
 var lastfm_root = 'https://www.last.fm/music/';
 var speaker_class = 'glyphicon glyphicon-volume-up';
 
+var album_class = "album-cover";
+var link_class = "album-link";
+var hover_class = "album-animation";
+var text_container_class = "text-container";
+var info_wrapper_class = "album-info-wrapper";
+var info_class = "album-info";
+
 $("document").ready(function() {
 
     // make the initial request
@@ -24,9 +31,8 @@ $("document").ready(function() {
 });
 
 
-
+// sends a new request for the recent track
 function sendRecentTracksRequest() {
-
     var trackRequest = new XMLHttpRequest();
     trackRequest.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -38,8 +44,7 @@ function sendRecentTracksRequest() {
 }
 
 
-
-
+// processes info about the most recent track and renders it in the page.
 function processTracksRequest(response) {
 
     var trackObject = response.recenttracks.track[0];
@@ -109,48 +114,73 @@ function processTracksRequest(response) {
     }
 }
 
-
-function populateBoard() {
-    var board = document.getElementById("album-collage");
-
-    for (var i = 0; i < 50; i++) {
-        var div = document.createElement("div");
-        div.className = "album-cover col-xs-1";
-
-        board.appendChild(div);
-    }
-}
-
-
+// loads the album cover grid based on the api response when top albums is requested.
 function processAlbumsRequest(response) {
 
-    var album_class = "album-cover col-xs-1";
     var container = document.getElementById("album-collage");
     var albums = response.topalbums.album;
 
     // loop through all albums and render them in the div specified by id "album-collage".
     for (var i = 0; i < albums.length; i++) {
         var album = albums[i];
-        var albumName = album.name;
-        var albumURL = album.url;
         var imageURL = album.image[2]['#text'];
 
-
         // create the album-cover.
-        var div = document.createElement("div");
-        div.className = album_class;
-        div.style.backgroundImage = "url('" + imageURL + "')";
+        var cover = document.createElement("div");
+        cover.className = album_class;
+        cover.style.backgroundImage = "url('" + imageURL + "')";
 
-        // add information to the album.
+        // construct the text div to overlay it and append it to the cover div.
+        var textDiv = constructAlbumTextDiv(album);
 
-        container.appendChild(div);
+        cover.appendChild(textDiv);
+        container.appendChild(cover);
     }
-
-
-
-
 
 
     console.log(response);
     console.log(albums);
+}
+
+
+// helper to create the div that will be added to the album-cover, holding info about the album.
+function constructAlbumTextDiv(albumObj) {
+    var artistName = albumObj.artist.name;
+    var albumName = albumObj.name;
+    var plays = albumObj.playcount;
+    var albumLink = albumObj.url;
+
+    var text = document.createElement("div");
+    text.className = info_class;
+
+    var textWrapper = document.createElement("div");
+    textWrapper.className = info_wrapper_class;
+    textWrapper.appendChild(text);
+
+    var titleEl = document.createElement("h5");
+    titleEl.appendChild(document.createTextNode(albumName));
+    text.appendChild(titleEl);
+
+    var artistEl = document.createElement("h5");
+    artistEl.appendChild(document.createTextNode(artistName));
+    text.appendChild(artistEl);
+
+    var playCountEl = document.createElement("h5");
+    playCountEl.appendChild(document.createTextNode("Plays: " + plays));
+    text.appendChild(playCountEl);
+
+    var textContainer = document.createElement("div");
+    textContainer.className = text_container_class;
+    textContainer.appendChild(textWrapper);
+
+    // make the album cover into a link
+    var albumLinkElement = document.createElement("a");
+    albumLinkElement.href = albumLink;
+    albumLinkElement.target = '_blank';
+    var linkSpan = document.createElement("span");
+    linkSpan.className = link_class;
+    albumLinkElement.append(linkSpan);
+    textContainer.appendChild(albumLinkElement);
+
+    return textContainer;
 }
