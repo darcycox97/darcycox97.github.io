@@ -211,6 +211,13 @@ body {
     height:200px;
     float: left;
     margin-right: 40px;
+
+    @media(max-width:767px){
+        & {
+            float:none;
+            margin: auto;
+        }
+    }
 }
 
 
@@ -239,5 +246,29 @@ body {
     }
     100% {
         opacity: 1.0;
+    }
+}
+
+#track-title {
+    margin-top: 10px;
+}
+
+.music-icon.glyphicon {
+    font-size: 30px;
+    vertical-align: top;
+}
+
+.album-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 0;
+    padding: 10% 0 0 0;
+
+    @media(max-width:991px){
+        & {
+            width:20%;
+            padding: 20% 0 0 0;
+        }
     }
 }

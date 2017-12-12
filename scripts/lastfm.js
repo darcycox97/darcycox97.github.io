@@ -6,7 +6,27 @@ var speaker_class = 'glyphicon glyphicon-volume-up';
 
 $("document").ready(function() {
 
-    // construct request for the most recent track, and pass the response on to be processed.
+    // make the initial request
+    sendRecentTracksRequest();
+    window.setInterval(sendRecentTracksRequest, 10000); // resend the request every 10 sec.
+
+    // request albums
+    var albumsRequest = new XMLHttpRequest();
+    albumsRequest.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            processAlbumsRequest(JSON.parse(this.response));
+        }
+    };
+
+    albumsRequest.open("GET", api_root + "?method=user.gettopalbums&period=3month&user=" + user + "&api_key=" + api_key + "&format=json")
+    albumsRequest.send();
+
+});
+
+
+
+function sendRecentTracksRequest() {
+
     var trackRequest = new XMLHttpRequest();
     trackRequest.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -15,12 +35,10 @@ $("document").ready(function() {
     };
     trackRequest.open('GET', api_root + '?method=user.getrecenttracks&limit=1&user=' + user + '&api_key=' + api_key + '&format=json');
     trackRequest.send();
+}
 
 
-    var albumsRequest = new XMLHttpRequest();
 
-
-});
 
 function processTracksRequest(response) {
 
@@ -70,13 +88,69 @@ function processTracksRequest(response) {
     }
 
     if (!nowPlaying) {
+        // calculate how long since the latest track was scrobbled.
+        // fyi the date property of the api response is a unix time stamp.
+        icon.className = "";
         var currentUTS = Date.now()/1000; // divide by 1000 so it's in seconds
         var scrobbleUTS = trackObject.date.uts;
         var minutesSinceScrobble = Math.floor((currentUTS - scrobbleUTS) / 60);
-        icon.innerHTML = minutesSinceScrobble + "m";
+
+        if (minutesSinceScrobble >= 60) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / 60) + "h ago";
+        } else if (minutesSinceScrobble >= (60 * 24)) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60 * 24)) + "d ago";
+        } else if (minutesSinceScrobble >= (60*24*30)) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*30)) + "mth ago";
+        } else if (minutesSinceScrobble >= (60*24*365)) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*365)) + "y ago";
+        } else {
+            icon.innerHTML = minutesSinceScrobble + "m ago";
+        }
     }
 }
 
-function processAlbumsRequest() {
 
+function populateBoard() {
+    var board = document.getElementById("album-collage");
+
+    for (var i = 0; i < 50; i++) {
+        var div = document.createElement("div");
+        div.className = "album-cover col-xs-1";
+
+        board.appendChild(div);
+    }
+}
+
+
+function processAlbumsRequest(response) {
+
+    var album_class = "album-cover col-xs-1";
+    var container = document.getElementById("album-collage");
+    var albums = response.topalbums.album;
+
+    // loop through all albums and render them in the div specified by id "album-collage".
+    for (var i = 0; i < albums.length; i++) {
+        var album = albums[i];
+        var albumName = album.name;
+        var albumURL = album.url;
+        var imageURL = album.image[2]['#text'];
+
+
+        // create the album-cover.
+        var div = document.createElement("div");
+        div.className = album_class;
+        div.style.backgroundImage = "url('" + imageURL + "')";
+
+        // add information to the album.
+
+        container.appendChild(div);
+    }
+
+
+
+
+
+
+    console.log(response);
+    console.log(albums);
 }
