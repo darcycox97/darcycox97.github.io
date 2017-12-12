@@ -70,10 +70,23 @@ function processTracksRequest(response) {
     }
 
     if (!nowPlaying) {
+        // calculate how long since the latest track was scrobbled.
+        // fyi the date property of the api response is a unix time stamp.
         var currentUTS = Date.now()/1000; // divide by 1000 so it's in seconds
         var scrobbleUTS = trackObject.date.uts;
         var minutesSinceScrobble = Math.floor((currentUTS - scrobbleUTS) / 60);
-        icon.innerHTML = minutesSinceScrobble + "m";
+
+        if (minutesSinceScrobble >= 60) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / 60) + "h";
+        } else if (minutesSinceScrobble >= (60 * 24)) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60 * 24)) + "d";
+        } else if (minutesSinceScrobble >= (60*24*30)) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*30)) + "months";
+        } else if (minutesSinceScrobble >= (60*24*365)) {
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*365)) + "years";
+        } else {
+            icon.innerHTML = minutesSinceScrobble + "m";
+        }
     }
 }
 
