@@ -6,7 +6,18 @@ var speaker_class = 'glyphicon glyphicon-volume-up';
 
 $("document").ready(function() {
 
-    // construct request for the most recent track, and pass the response on to be processed.
+    // make the initial request
+    sendRecentTracksRequest();
+
+    var albumsRequest = new XMLHttpRequest();
+    window.setInterval(sendRecentTracksRequest, 10000); // resend the request every 10 sec.
+
+});
+
+
+
+function sendRecentTracksRequest() {
+
     var trackRequest = new XMLHttpRequest();
     trackRequest.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -15,14 +26,11 @@ $("document").ready(function() {
     };
     trackRequest.open('GET', api_root + '?method=user.getrecenttracks&limit=1&user=' + user + '&api_key=' + api_key + '&format=json');
     trackRequest.send();
-
-
-    var albumsRequest = new XMLHttpRequest();
-
-
-});
+}
 
 function processTracksRequest(response) {
+
+    console.log("processing");
 
     var trackObject = response.recenttracks.track[0];
 
@@ -81,9 +89,9 @@ function processTracksRequest(response) {
         } else if (minutesSinceScrobble >= (60 * 24)) {
             icon.innerHTML = Math.floor(minutesSinceScrobble / (60 * 24)) + "d";
         } else if (minutesSinceScrobble >= (60*24*30)) {
-            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*30)) + "months";
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*30)) + "mth";
         } else if (minutesSinceScrobble >= (60*24*365)) {
-            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*365)) + "years";
+            icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*365)) + "y";
         } else {
             icon.innerHTML = minutesSinceScrobble + "m";
         }
