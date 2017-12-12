@@ -10,6 +10,7 @@ var hover_class = "album-animation";
 var text_container_class = "text-container";
 var info_wrapper_class = "album-info-wrapper";
 var info_class = "album-info";
+var info_text_class = "album-info-text";
 
 $("document").ready(function() {
 
@@ -150,24 +151,28 @@ function constructAlbumTextDiv(albumObj) {
     var plays = albumObj.playcount;
     var albumLink = albumObj.url;
 
-    var text = document.createElement("div");
-    text.className = info_class;
+    var info = document.createElement("div");
+    info.className = info_class;
+
+    var infoText = document.createElement("div");
+    infoText.className = info_text_class;
+    info.appendChild(infoText);
 
     var textWrapper = document.createElement("div");
     textWrapper.className = info_wrapper_class;
-    textWrapper.appendChild(text);
+    textWrapper.appendChild(info);
 
     var titleEl = document.createElement("h5");
     titleEl.appendChild(document.createTextNode(albumName));
-    text.appendChild(titleEl);
+    infoText.appendChild(titleEl);
 
     var artistEl = document.createElement("h5");
     artistEl.appendChild(document.createTextNode(artistName));
-    text.appendChild(artistEl);
+    infoText.appendChild(artistEl);
 
     var playCountEl = document.createElement("h5");
     playCountEl.appendChild(document.createTextNode("Plays: " + plays));
-    text.appendChild(playCountEl);
+    infoText.appendChild(playCountEl);
 
     var textContainer = document.createElement("div");
     textContainer.className = text_container_class;
