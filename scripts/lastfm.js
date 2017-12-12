@@ -137,10 +137,6 @@ function processAlbumsRequest(response) {
         cover.appendChild(textDiv);
         container.appendChild(cover);
     }
-
-
-    console.log(response);
-    console.log(albums);
 }
 
 
