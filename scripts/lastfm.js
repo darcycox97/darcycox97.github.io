@@ -29,6 +29,8 @@ $("document").ready(function() {
     albumsRequest.open("GET", api_root + "?method=user.gettopalbums&period=3month&user=" + user + "&api_key=" + api_key + "&format=json")
     albumsRequest.send();
 
+    console.log("Running");
+
 });
 
 
