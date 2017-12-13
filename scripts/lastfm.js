@@ -182,7 +182,7 @@ function constructAlbumTextDiv(albumObj) {
     albumLinkElement.target = '_blank';
     var linkSpan = document.createElement("span");
     linkSpan.className = link_class;
-    albumLinkElement.append(linkSpan);
+    albumLinkElement.appendChild(linkSpan);
     textContainer.appendChild(albumLinkElement);
 
     return textContainer;
