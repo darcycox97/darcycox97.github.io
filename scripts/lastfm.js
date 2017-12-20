@@ -1,6 +1,6 @@
 var api_key = 'b5d98464c82acbabb4ee727c9b683d7d';
 var user = 'darcycox97';
-var api_root = 'http://ws.audioscrobbler.com/2.0/';
+var api_root = 'https://ws.audioscrobbler.com/2.0/';
 var lastfm_root = 'https://www.last.fm/music/';
 var speaker_class = 'glyphicon glyphicon-volume-up';
 
