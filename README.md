@@ -8,4 +8,5 @@ It is very much a work in progress.</p>
 <b>TODO:</b>
 <ul>
 <li>Song request form on piano page</li>
+<li>Custom error pages</li>
 </ul>
