@@ -29,8 +29,6 @@ $("document").ready(function() {
     albumsRequest.open("GET", api_root + "?method=user.gettopalbums&period=3month&user=" + user + "&api_key=" + api_key + "&format=json")
     albumsRequest.send();
 
-    console.log("Running");
-
 });
 
 
@@ -103,11 +101,11 @@ function processTracksRequest(response) {
         var scrobbleUTS = trackObject.date.uts;
         var minutesSinceScrobble = Math.floor((currentUTS - scrobbleUTS) / 60);
 
-        if (minutesSinceScrobble >= 60) {
+        if (minutesSinceScrobble >= 60 && minutesSinceScrobble < (60 * 24)) {
             icon.innerHTML = Math.floor(minutesSinceScrobble / 60) + "h ago";
-        } else if (minutesSinceScrobble >= (60 * 24)) {
+        } else if (minutesSinceScrobble >= (60 * 24) && minutesSinceScrobble < (60*24*30)) {
             icon.innerHTML = Math.floor(minutesSinceScrobble / (60 * 24)) + "d ago";
-        } else if (minutesSinceScrobble >= (60*24*30)) {
+        } else if (minutesSinceScrobble >= (60*24*30) && minutesSinceScrobble < (60*24*365)) {
             icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*30)) + "mth ago";
         } else if (minutesSinceScrobble >= (60*24*365)) {
             icon.innerHTML = Math.floor(minutesSinceScrobble / (60*24*365)) + "y ago";
