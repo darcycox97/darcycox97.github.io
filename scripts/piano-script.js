@@ -13,6 +13,9 @@ var DISLIKES = 'DISLIKES';
 // start only when DOM is ready
 $(document).ready(function() {
     gapi.load('client', start);
+
+    // keep refreshing the page every 30 sec so data is relative
+    window.setInterval(start, 30000);
 });
 
 function start() {
