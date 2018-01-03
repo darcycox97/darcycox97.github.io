@@ -12,11 +12,13 @@ var DISLIKES = 'DISLIKES';
 // load js api client to enable api calls
 // start only when DOM is ready
 $(document).ready(function() {
-    gapi.load('client', start);
-
-    // keep refreshing the page every 30 sec so data is relative
-    window.setInterval(start, 30000);
+    load(); // load the api context and start the requests for YT data.
+    window.setInterval(load,30000); // refresh the data every 30 sec so it is live
 });
+
+function load() {
+    gapi.load('client', start);
+}
 
 function start() {
     gapi.client.init({'apiKey':API_KEY})
@@ -47,7 +49,6 @@ function start() {
 
 // iterates through videos in the playlist and queries for view counts etc. renders info in the html file
 function scanPlaylist(playlistID) {
-
     gapi.client.request({
         'path':API_BASE_URL+'playlistItems',
         'params': {
