@@ -54,7 +54,8 @@ function scanPlaylist(playlistID) {
         'params': {
             'part': 'contentDetails',
             'playlistId': playlistID,
-            'fields':'items(contentDetails/videoId)'
+            'fields':'items(contentDetails/videoId)',
+            'maxResults' : 50
         }
     })
     .then(
