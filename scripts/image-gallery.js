@@ -17,6 +17,11 @@ $(document).ready(function() {
         imgs: ['phone-1.jpg','phone-2.jpg'],
         galleryId: 'arduino-gallery'
     });
+    loadGallery({
+        dir: '/res/screenshots/midi/',
+        imgs: ['arabesque.png','clair_de_lune.png','hungarian_rhapsody.png'],
+        galleryId: 'midi-suite-gallery'
+    });
 });
 
 
