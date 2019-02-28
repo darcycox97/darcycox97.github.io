@@ -49,6 +49,32 @@
                 <!-- on larger screen projects will be across 2 columns -->
                 <div class="col-xs-12 col-md-6 no-padding" id="firstColumn"> <!-- first column (on md+ screens) -->
                     <div class="project">
+                        <h1 class="text-centered">Little Coders</h1>
+                        <p class="col-xs-12 col-sm-10 col-sm-offset-1">
+                            As part of a 3rd year Software Engineering design course, our cohort had to work in groups of eight to develop a game using the Unity engine.
+                            The brief we were given for this project was fairly vague, other than that the game should address issues of diversity in Software Engineering.
+                            The game my team came up with was an idle-simulation game, where the player acts the role of a manager of a software startup.
+                            <br><br>
+                            The gameplay consists of two cycling phases. The first is where the player completes projects. Each project takes a short time to complete, and the player 
+                            receives a monetary score upon each project's completion. This score depends on the happiness of your employees.
+                            <br><br>
+                            The second phase of gameplay is hiring. Hiring is essential to progress through the game, and occurs once the player has enough money to hire new employees.
+                            In this game, it is important to hire diversely. If the player consistently hires employees of the same demographic, the employees will start to complain,
+                            causing the monetary score of each project to decrease, and possibly even causing some employees to leave due to poor workplace culture.
+                            <br><br>
+                            This project was very interesting to work on, as we got to be very creative (all the game assets were designed and created by the team). It was also my first
+                            experience working in a shared repository with so many people, so we had to come up with processes to manage our git workflow.
+                            <br><br>
+                            This project won the best game award out of all the projects submitted by the cohort.
+                        </p>
+                        <div id="littlecoders-gallery" class="gallery col-sm-10 col-sm-offset-1">
+                            <a class="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>
+                            <a class="nextImg" href="#"><i class="fa fa-arrow-right fa-lg"></i></a>
+                        </div>
+                        <p class="col-sm-10 col-sm-offset-1 text-centered"><a href="https://github.com/darcycox97/Little-Coders" target="_blank" class="inline-link">See the GitHub</a></p>
+                    </div>
+
+                    <div class="project">
                         <h1 class="text-centered">T&#257;tai!</h1>
                         <p class="col-xs-12 col-sm-10 col-sm-offset-1">
                             T&#257;tai! was a project that all part II Software Engineers had to complete in groups of two.
@@ -66,31 +92,34 @@
                         </div>
                         <p class="col-sm-10 col-sm-offset-1 text-centered"><a href="https://github.com/darcycox97/Tatai" target="_blank" class="inline-link">See the GitHub</a></p>
                     </div>
-
-                    <div class="project">
-                        <h1 class="text-centered">Sorting Algorithms</h1>
-                        <p class="col xs-12 col-sm-10 col-sm-offset-1">
-                            This one isn't very exciting. I implemented a bunch of sorting algorithms that we had been taught in class.
-                            It was really just a small project to help my understanding of data structures.
-                        </p>
-                        <p class="col-sm-10 col-sm-offset-1 text-centered"><a href="https://github.com/darcycox97/Sorting" target="_blank" class="inline-link">See the GitHub</a></p>
-                    </div>
-
                 </div>
                 <div class="col-xs-12 col-md-6 no-padding"> <!-- second column on md+ screens -->
                     <div class="project">
                         <h1 class="text-centered">MIDIsuite</h1>
                         <p class="col-xs-12 col-sm-10 col-sm-offset-1">
                             I've always wanted to work on a project that in some way helps my piano channel - Datty Plays. The natural way to combine
-                            a programming project with piano is to make use of MIDI files, which are a digital representation of a musical performance. I am currently
-                            familiarising myself with the MIDI file format, which is essential to understand before I can do anything with MIDI.
-                            My end goal is to produce software that will automatically generate a visualisation of the MIDI performance.
+                            a programming project with piano is to make use of MIDI files, which are a digital representation of a musical performance.
+                            Something that I thought would be really cool would be to be able to generate visualisations of my piano performances, that I could 
+                            then upload to YouTube in accompaniment to the audio, rather than just a video of me playing. 
+                            This project was heavily inspired by the <a class="inline-link" href="https://www.youtube.com/user/smalin">smalin</a> YouTube channel.
                             <br />
                             <br />
-                            This project is heavily inspired by the <a class="inline-link" href="https://www.youtube.com/user/smalin">smalin</a> YouTube channel.
+                            The finished project works by taking a midi file and an image as input, and generates a video of animated notes scrolling along the screen.
+                            When a note hits the vertical bar in the center of the screen, it's corresponding sound is played. Each piano piece produces a very different 
+                            looking visualisation, and the finished product has the ability to customise the note colors, opacity, and scrolling speed. I am very happy 
+                            with how this project turned out.
                             <br />
-                            <br  />
-                            Some examples of what I want to achieve are shown in the images below:
+                            <br />
+                            One function I am especially proud of, and hence am mentioning in this write-up, is the export functionality. Late in 2018 I had a more-or-less 
+                            finished product, where a visualisation would be played, but I had no way to access this visualisation as a video file that I could then upload to YouTube.
+                            So clearly I needed to write some code to export this visualisation to a video format.
+                            <br>
+                            <br>
+                            Implementing this export functionality was far more difficult than expected, as I was using a 3rd party library to create the animations which in itself 
+                            didn't provide an export option. After extensive research and a lot of proofs of concepts, I managed to get the functionality working by capturing the content 
+                            of the html canvas element every 1/30th of a second, and writing each frame out to disk as a png. When the number of png's on disk reaches a certain threshold, I make 
+                            a call to ffmpeg to combine all the pngs into a video at 30 frames per second. This worked like a charm, as you can see on my more recent 
+                            <a class="inline-link" href="https://www.youtube.com/channel/UCgwVh2dB1hAuFW_UE-fndQQ" target="_blank">YouTube videos.</a>
                         </p>
                         <div id="midi-suite-gallery" class="gallery col-xs-12 col-sm-10 col-sm-offset-1">
                             <a class="prevImg" href="#"><i class="fa fa-arrow-left fa-lg"></i></a>

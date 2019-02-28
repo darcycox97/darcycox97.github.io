@@ -19,8 +19,13 @@ $(document).ready(function() {
     });
     loadGallery({
         dir: '/res/screenshots/midi/',
-        imgs: ['arabesque.png','clair_de_lune.png','hungarian_rhapsody.png'],
+        imgs: ['example_1.png','example_2.png'],
         galleryId: 'midi-suite-gallery'
+    });
+    loadGallery({
+        dir: '/res/screenshots/littlecoders/',
+        imgs: ['MAIN_MENU.jpg', 'LEVEL_1.jpg','LEVEL_2.PNG','LEVEL_3.PNG'],
+        galleryId: 'littlecoders-gallery'
     });
 });
 
